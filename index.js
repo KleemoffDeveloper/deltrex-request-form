@@ -31,8 +31,8 @@ form.addEventListener('submit', (event) => {
 
     emailDestination = mailtoField.value ? mailtoField.value : emailDestination
 
-    body = `Product Title: ${productTitle.value}, Short Description: ${shortDescription.value}, Product Description: ${productDescription.value}`
-
+    body = `Product Title: ${productTitle.value}\n\n Short Description: ${shortDescription.value}\n\n Product Description: ${productDescription.value}`
+    body = encodeURIComponent(body)
     window.open(`mailto:${emailDestination}?subject=${subject}&body=${body}`)
 })
 
